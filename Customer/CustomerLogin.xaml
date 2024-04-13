@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilewakala.Customer.CustomerLogin"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+
+             Title="CustomerLogin">
+
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="location.png"/>
+        <Grid BackgroundColor="Brown" Opacity=".8"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFill" 
+                   HeightRequest="200"  
+                   Source="unplannedservice.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                            CornerRadius="30,30,0,0"
+                            Fill="White"/>
+
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label FontAttributes="Bold"
+        FontFamily="bold"
+        FontSize="Medium"
+        Text="Mteja"/>
+
+
+                <inputLayout:SfTextInputLayout Hint="Namba Ya Simu"
+                              HelperText="Please Enter Phone No"
+                        >
+                    <inputs:SfMaskedEntry MaskType="Simple"
+                              Mask="0000000000"
+                              x:Name="CustomerId"
+                              />
+                </inputLayout:SfTextInputLayout>
+
+
+
+
+                <buttons:SfButton Text="Ingia"  Clicked= "OnLoginClicked"/>
+            </VerticalStackLayout>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

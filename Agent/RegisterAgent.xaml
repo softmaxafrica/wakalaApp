@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:checkBox = "clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:Class="mobilewakala.Agent.RegisterAgent"
+             Title="RegisterAgent">
+    <ContentPage.Resources>
+
+        <Style TargetType="checkBox:SfCheckBox">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="DarkBlue"/>
+            <Setter Property="CheckedColor" Value="Green"/>
+            <Setter Property="UncheckedColor" Value="Red"/>
+
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="DarkBlue"/>
+            <Setter Property="FontSize" Value="16"/>
+
+
+
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout
+    BackgroundColor="Wheat"
+>
+
+            <StackLayout
+             BackgroundColor="Black"
+                Margin="20,70,20,0">
+
+
+                <StackLayout  BackgroundColor="White">
+                    <Label Text="welcome our new Agent "  FontAttributes="Italic" HorizontalOptions="Center" Margin=" 0, 12, 5,0" ></Label>
+                    <StackLayout Margin="30">
+                        <Label Text=" Jina Kamili"   HorizontalOptions="Start" Padding="10" ></Label>
+                        <Entry  VerticalOptions="Center"  Placeholder="eg Daniel Hussein" x:Name="agentFullName" ></Entry>
+
+                        <Label Text="Nida"   HorizontalOptions="Start" Padding="10" ></Label>
+                        <Entry  VerticalOptions="Center"  Placeholder="19901221151210000122" x:Name="nida" ></Entry>
+
+                        <Label Text="Chagua Mtandao"/>
+
+                        <StackLayout Margin="10,0">
+                            <checkBox:SfCheckBox x:Name="Airtel" Text="Airtel"   StateChanged="network_StateChanged"/>
+                            <checkBox:SfCheckBox x:Name="Halotel" Text="Halotel" StateChanged="network_StateChanged"/>
+                            <checkBox:SfCheckBox x:Name="Tigo" Text="Tigo" StateChanged="network_StateChanged"/>
+                            <checkBox:SfCheckBox x:Name="Vodacom" Text="Vodacom" StateChanged="network_StateChanged"/>
+                            <checkBox:SfCheckBox x:Name="Ttcl" Text="Ttcl" StateChanged="network_StateChanged"/>
+
+                            <Label x:Name="SelectedItemsLabel" TextColor="Red" />
+
+
+                        </StackLayout>
+
+                        <Label Text="Chagua Mtandao"/>
+
+                        <StackLayout Margin="10,0">
+                            <checkBox:SfCheckBox x:Name="SimCardServices" Text="Huduma Za Laini"   StateChanged="services_StateChanged"/>
+                            <checkBox:SfCheckBox x:Name="MoneyTransactionServices" Text="Huduma Za Kifedha" StateChanged="services_StateChanged"/>
+
+                            <Label x:Name="SelectedIServicesCode" TextColor="Red"/>
+
+                        </StackLayout>
+
+
+                        <Label Text="Neno La Siri"   HorizontalOptions="Start" Padding="10" ></Label>
+                        <Entry  VerticalOptions="Center" IsPassword="True" Placeholder=" eg Ahmn@#HFY_302#"  x:Name="password" ></Entry>
+
+                        <Label Text="Namba Ya Simu"   HorizontalOptions="Start" Padding="10" ></Label>
+                        <Entry  VerticalOptions="Center"  Placeholder="eg +255 *** *** ***" x:Name="phone"></Entry>
+
+                        <Label Text="Kodi ya Wakala"   HorizontalOptions="Start" Padding="10" ></Label>
+                        <Entry  VerticalOptions="Center" Placeholder="Enter Agent Code" x:Name="agentCode" ></Entry>
+
+                        <Label Text="Eneo La Kazi"   HorizontalOptions="Start" Padding="10" ></Label>
+                        <Entry  VerticalOptions="Center" Placeholder="eg Makumbusho Dar es salaam"  x:Name="address"></Entry>
+
+                        <Button Text="Jisajili"  FontAttributes="Bold" Clicked="RegisterButton_Clicked"></Button>
+
+                    </StackLayout>
+
+                    <Label Text="Already Having an account? Login" 
+			  TextColor="Blue"
+			  VerticalOptions="CenterAndExpand"
+			  Margin="20">
+
+                    </Label>
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>

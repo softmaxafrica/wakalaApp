@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+    xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+    xmlns:SflistView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+                          xmlns:local="clr-namespace:mobilewakala.Customer"
+             x:Class="mobilewakala.Customer.SelectAgent"
+    
+             >
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="location.png"/>
+        <Grid BackgroundColor="Brown" Opacity=".9"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFill" 
+              HeightRequest="150"  
+              Source="unplannedservice.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                            CornerRadius="30,30,0,0"
+                            Fill="White"/>
+            <CollectionView x:Name="ActiveAgents" ItemsLayout="verticalGrid" SelectionMode="Single" EmptyView="Hakuna Wakala Kwa Sasa Tafadhali Jaribu tena Baadae" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame  Margin="10,10,10,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".3*"/>
+                                    <ColumnDefinition Width=".7*"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding agentFullName}" Grid.Column="0" Grid.Row="0" FontSize="Medium" FontAttributes="Bold" TextColor="Blue"/>
+                                <VerticalStackLayout Grid.Column="1" Grid.Row="0"  VerticalOptions="Center">
+                                    <HorizontalStackLayout Grid.Row="0" Padding="5">
+                                        <Label Text="Namba ya simu" FontSize="Small"/>
+                                        <Label Text="{Binding agentPhone}" FontSize="Small"  FontAttributes="Bold" TextColor="Blue" HorizontalOptions="End"/>
+
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Grid.Row="1" Padding="5">
+                                        <Label Text="Umbali (Km)" FontSize="Small" />
+                                        <Label Text="{Binding DistanceToCustomer}" FontSize="Small" FontAttributes="Bold" TextColor="Blue" HorizontalTextAlignment="End"/>
+
+                                    </HorizontalStackLayout>
+                                    <!--<VerticalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </VerticalStackLayout.GestureRecognizers>-->
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Frame_Tapped" />
+                            </Frame.GestureRecognizers>
+
+                        </Frame>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>

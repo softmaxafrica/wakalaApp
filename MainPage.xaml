@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+              xmlns:sfavatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+          
+             x:Class="mobilewakala.MainPage">
+
+        <Grid RowDefinitions=".3*,.7*">
+            <Image Aspect="AspectFill" Source="location.png"/>
+            <Grid BackgroundColor="Brown" Opacity=".9"/>
+            <Grid ColumnDefinitions="*,*">
+                <Image Aspect="AspectFill" 
+                 HeightRequest="150"  
+                 Source="unplannedservice.png"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <RoundRectangle Margin="-5,-30,-5,-2"
+                          CornerRadius="30,30,0,0"
+                          Fill="White"/>
+            <ScrollView>
+                <VerticalStackLayout Margin="10,50,10,0">
+                    <Label FontAttributes="Bold"
+                        FontFamily="bold"
+                        FontSize="Medium"
+                        Text="Karibu, Je Wewe Ni Nani ?"
+                       />
+                    <Frame CornerRadius="15" VerticalOptions="EndAndExpand">
+                        <Grid RowSpacing="10" ColumnSpacing="130" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Frame 1 with Avatar -->
+                            <Frame Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" CornerRadius="15" Padding="5" HasShadow="True" BackgroundColor="Transparent">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="MtejaLog"/>
+                                </Frame.GestureRecognizers>
+                                <sfavatar:SfAvatarView ContentType="Default" ImageSource="simcard.jpg" HorizontalOptions="Center" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" CornerRadius="20"/>
+                            </Frame>
+                            <Label Text="Mteja" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Small"  Grid.Row="1" Grid.Column="0"/>
+
+                            <!-- Frame 2 with Avatar -->
+                            <Frame Grid.Row="0" Grid.Column="1" CornerRadius="15" Padding="5"  HasShadow="False"  WidthRequest="100" HeightRequest="100" BackgroundColor="Transparent">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="WakalaLog"/>
+                                </Frame.GestureRecognizers>
+                                <sfavatar:SfAvatarView ContentType="Default"
+                                ImageSource="simcard.jpg"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"   
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                CornerRadius="20">
+                                </sfavatar:SfAvatarView>
+                            </Frame>
+                            <Label Text="Wakala" Grid.Row="1" Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Small" />
+
+
+                        </Grid>
+                    </Frame>
+
+
+                </VerticalStackLayout>
+            </ScrollView>
+            </Grid>
+        </Grid>
+   
+
+</ContentPage>

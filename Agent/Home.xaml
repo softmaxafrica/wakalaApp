@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:sfavatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+                        xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+             x:Class="mobilewakala.Agent.Home"
+             >
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="location.png"/>
+        <Grid BackgroundColor="Brown" Opacity=".9"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFill" 
+              HeightRequest="200"  
+              Source="unplannedservice.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                        CornerRadius="30,30,0,0"
+                        Fill="White"/>
+            
+                <tabView:SfTabView x:Name="tabView">
+                <tabView:SfTabView.Items>
+                    <tabView:SfTabItem Header="Nyumbani" ImageSource="home" TextColor="Brown" FontAttributes="Bold" TabImagePosition="Left">
+                        <tabView:SfTabItem.Content>
+                            
+                            <VerticalStackLayout Margin="10,40,10,0">
+                <Label FontAttributes="Bold"
+FontFamily="bold"
+FontSize="Medium"
+Text="Karibu,Wakala "/>
+                 <!--<Label
+      Text=""
+      x:Name="chatMessages"
+       HorizontalOptions="EndAndExpand"
+      VerticalOptions="CenterAndExpand"/>-->
+                <Frame CornerRadius="15" VerticalOptions="EndAndExpand">
+                    <Grid RowSpacing="10" ColumnSpacing="100" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Frame 1 with Avatar -->
+                        <Frame Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" CornerRadius="15" Padding="5" HasShadow="True" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MyOpenTicket"/>
+                            </Frame.GestureRecognizers>
+                            <sfavatar:SfAvatarView ContentType="Default" ImageSource="simcard.jpg" HorizontalOptions="Center" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" CornerRadius="20"/>
+                        </Frame>
+                        <Label Text="Maombi Mapya" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Small"  Grid.Row="1" Grid.Column="0"/>
+                        <!-- Frame 2 with Avatar -->
+                        <Frame Grid.Row="0" Grid.Column="1" CornerRadius="15" Padding="5"  HasShadow="False"  WidthRequest="100" HeightRequest="100" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AllGroupOpenTicket"/>
+                            </Frame.GestureRecognizers>
+                            <sfavatar:SfAvatarView ContentType="Default"
+                                ImageSource="simcard.jpg"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"   
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                CornerRadius="20">
+                            </sfavatar:SfAvatarView>
+                        </Frame>
+                        <Label Text="Maombi Ya Wengine" Grid.Row="1" Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Small" />
+                        <!-- Frame 3 with Avatar -->
+                        <Frame Grid.Row="2" Grid.Column="0" CornerRadius="15"   WidthRequest="100" HeightRequest="100" Padding="5" HasShadow="False" BackgroundColor="Transparent">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="MyClosedTickets"/>
+                            </Frame.GestureRecognizers>
+                            <sfavatar:SfAvatarView ContentType="Default"
+                                ImageSource="simcard.jpg"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"   
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                CornerRadius="20">
+                            </sfavatar:SfAvatarView>
+                        </Frame>
+                        <Label Text="Historia Ya Maombi" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Small"  Grid.Row="3" Grid.Column="0"/>
+                        <!-- Frame 4 with Avatar -->
+                        <Frame Grid.Row="2" Grid.Column="1" CornerRadius="15" Padding="5"    WidthRequest="100" HeightRequest="100" HasShadow="False" BackgroundColor="Transparent" >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Chatting"/>
+                            </Frame.GestureRecognizers>
+                            <sfavatar:SfAvatarView ContentType="Default"
+                                ImageSource="simcard.jpg"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"   
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                CornerRadius="20"
+                                >
+                            </sfavatar:SfAvatarView>
+                        </Frame>
+                        <Label Text="Mawasiliano" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Small"  Grid.Row="3" Grid.Column="1"/>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+
+                    <tabView:SfTabItem Header="Mpangilio" ImageSource="setting.png" TextColor="Brown" FontAttributes="Bold" TabImagePosition="Left">
+                        <tabView:SfTabItem.Content>
+
+                            <VerticalStackLayout Margin="30,30,30,0">
+                                <Label FontAttributes="Bold"
+                FontSize="Medium"
+                FontFamily="bold"
+                Text="Mpangilio"/>
+
+                                     <HorizontalStackLayout HorizontalOptions="StartAndExpand">
+                                        <Grid ColumnSpacing="100"  HorizontalOptions="FillAndExpand" FlexLayout.AlignSelf="Stretch">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <syncfusion:SfSwitch
+                                    HorizontalOptions="Start"
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                    VerticalOptions="Center"   
+                                    Grid.Column="0" Grid.Row="0"
+                                x:Name="loginSwitch"
+                                StateChanged="LoginSfSwitch_StateChanged"
+                                
+                                    >
+                                            </syncfusion:SfSwitch>
+
+                                            <Label Text="Bonyeza Ili Kuondoka" Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand"/>
+
+                                            <syncfusion:SfSwitch HorizontalOptions="End" Grid.Column="1" Grid.Row="0" x:Name="statuSwitch" StateChanged="SfSwitch_StateChanged" />
+
+                                                <Label Text="Status ya Wakala" Grid.Row="1" Grid.Column="1" x:Name="statusLabel" HorizontalOptions="EndAndExpand"/>
+                                        </Grid>
+                                    </HorizontalStackLayout>
+ 
+
+
+                            </VerticalStackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                </tabView:SfTabView.Items>
+            </tabView:SfTabView>
+
+        </Grid>
+    </Grid>
+</ContentPage>

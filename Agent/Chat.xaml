@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilewakala.Agent.Chat"
+             Title="Chat">
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="location.png"/>
+        <Grid BackgroundColor="Brown" Opacity=".8"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFill" 
+               HeightRequest="200"  
+               Source="unplannedservice.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                         CornerRadius="30,30,0,0"
+                         Fill="White"/>
+            <VerticalStackLayout Margin="30,0,30,0">
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

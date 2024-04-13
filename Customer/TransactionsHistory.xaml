@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilewakala.Customer.TransactionsHistory"
+             Title="TransactionsHistory">
+
+    <Grid RowDefinitions=".3*,.7*">
+            <Image Aspect="AspectFill" Source="location.png"/>
+            <Grid BackgroundColor="Brown" Opacity=".8"/>
+            <Grid ColumnDefinitions="*,*">
+                <Image Aspect="AspectFill" 
+                  HeightRequest="200"  
+                  Source="unplannedservice.png"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <RoundRectangle Margin="-5,-30,-5,-2"
+                           CornerRadius="30,30,0,0"
+                           Fill="White"/>
+
+                <VerticalStackLayout Margin="30,0,30,0">
+
+                    <Frame>
+                        <CollectionView   x:Name="TicketHistoryListLoaded"   SelectionMode="Single"  Margin="0,5,0,5">
+
+
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame  Margin="0,5,0,5" BackgroundColor="#eee">
+                                        <VerticalStackLayout>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Row="0" Grid.Column="0" Text="Namba Ya Mteja:" HorizontalOptions="Center" />
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding phoneNumber}" HorizontalOptions="Center" />
+                                                <Label Grid.Row="1" Grid.Column="0" Text="Mtandao:"  />
+                                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding network}" HorizontalOptions="Center" />
+                                                <Label Grid.Row="2" Grid.Column="0" Text="Huduma:" />
+                                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding serviceRequested}" HorizontalOptions="Center"/>
+                                                <Label Grid.Row="3" Grid.Column="0" Text="Maelezo:" />
+                                                <Label Grid.Row="3" Grid.Column="1" Text="{Binding description}" HorizontalOptions="Center" />
+                                                <Label Grid.Row="4" Grid.Column="0" Text="Hali:" />
+                                                <Label Grid.Row="4" Grid.Column="1" Text="{Binding ticketStatus}" HorizontalOptions="Center" />
+                                                <Label Grid.Row="5" Grid.Column="0" Text="Tarehe Ya Maombi:" />
+                                                <Label Grid.Row="5" Grid.Column="1" Text="{Binding ticketCreationDateTime}" HorizontalOptions="Center" />
+
+
+                                            </Grid>
+                                        </VerticalStackLayout>
+
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Frame_Tapped" />
+                                        </Frame.GestureRecognizers>
+
+                                    </Frame>
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+                    </Frame>
+
+
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage>

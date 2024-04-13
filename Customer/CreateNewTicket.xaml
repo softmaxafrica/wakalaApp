@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilewakala.Customer.CreateNewTicket"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+ >
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="location.png"/>
+        <Grid BackgroundColor="Brown" Opacity=".9"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFill" 
+                  HeightRequest="200"  
+                  Source="unplannedservice.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                           CornerRadius="30,30,0,0"
+                           Fill="White"/>
+
+            <VerticalStackLayout Margin="30,0,30,0">
+
+                <inputLayout:SfTextInputLayout Hint="Maelezo mafupi" 
+                                        HelperText="any description or message to agent (if any)">
+                    <Entry Text="{Binding EnteredDescription, Mode=TwoWay}" />
+                </inputLayout:SfTextInputLayout>
+
+                <inputLayout:SfTextInputLayout x:Name="Mtandao" Hint="Chagua Mtandao">
+                    <inputs:SfComboBox x:Name="NetworkComboBox"
+                               ItemsSource="{Binding NetworkItems}"
+                               SelectionChanged="OnNetworkComboBoxSelectedIndexChanged"/>
+                </inputLayout:SfTextInputLayout>
+
+                <inputLayout:SfTextInputLayout x:Name="Huduma" Hint="Chagua Huduma">
+                    <inputs:SfComboBox x:Name="ServiceComboBox"
+                               ItemsSource="{Binding ServiceItems}"
+                               SelectionChanged="OnServiceComboBoxSelectedIndexChanged"/>
+                </inputLayout:SfTextInputLayout>
+
+                <buttons:SfButton Text="Endelea" Clicked="GoToFetchAgent"/>
+            </VerticalStackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>
